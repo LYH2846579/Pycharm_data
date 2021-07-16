@@ -40,9 +40,10 @@ else:
 import random
 computer = random.randint(0,2)
 print("computer=%d"%computer)
-'''
+
 import random
 
+#石头剪子布游戏
 a = input("请输入:剪刀(0)、石头(1)、布(2):")
 if a.isdigit():             #判断是否为数字
     a = int(a)              #强制类型转换
@@ -67,7 +68,17 @@ if a.isdigit():             #判断是否为数字
             print("恭喜你赢了!")
 else:
     print("输入错误!")
-
+'''
+#0~100求和
+sum = 0
+for i in range(101):
+    sum += i
+print("sum=%d"%sum)
+number = 0;i=0
+while i<101:
+    number += i
+    i += 1
+print("number=%d"%number)
 
 
 
