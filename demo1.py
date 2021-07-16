@@ -68,7 +68,7 @@ if a.isdigit():             #判断是否为数字
             print("恭喜你赢了!")
 else:
     print("输入错误!")
-'''
+
 #0~100求和
 sum = 0
 for i in range(101):
@@ -79,10 +79,31 @@ while i<101:
     number += i
     i += 1
 print("number=%d"%number)
+'''
 
-
-
-
+#列表
+namelist = ["张三","李四","王五"]
+print(namelist[0])
+#添加成员
+namelist.append("赵六")
+namelist.insert(0,"钻石王老五")
+#namelist.extend("刘七")              #注意Extend的添加形式
+print("*"*30)
+for name in namelist:
+    print(name)
+#删除元素
+namelist.remove("王五")
+del namelist[0]                         #删除头号元素
+namelist.pop()
+print("*"*30)
+for name in namelist:
+    print(name)
+#输入查找名字是否在队列中
+iname = input("请输入一个名字:")
+if iname in namelist:
+    print("%s在队列中"%iname)
+else:
+    print("%s不在队列中"%iname)
 
 
 
