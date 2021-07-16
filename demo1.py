@@ -79,7 +79,7 @@ while i<101:
     number += i
     i += 1
 print("number=%d"%number)
-'''
+
 
 #列表
 namelist = ["张三","李四","王五"]
@@ -104,9 +104,24 @@ if iname in namelist:
     print("%s在队列中"%iname)
 else:
     print("%s不在队列中"%iname)
+#指定范围查询         查询成功返回指定位置 否则报错
+print("张三位于:",namelist.index("张三",0,2))
+#统计
+print("李四出现了",namelist.count("李四"),"次")
+'''
 
-
-
+namelist = ["a","b","c","d"]
+namelist.reverse()              #列表反转
+for name in namelist:
+    print(name,end="")          #取消换行
+namelist.sort()
+print()                         #换行
+for name in namelist:
+    print(name,end="")
+namelist.sort(reverse=True)     #Python中True和False开头均为大写
+print()                         #换行
+for name in namelist:
+    print(name,end="")
 
 
 
