@@ -139,7 +139,7 @@ for office in offices:
         print("%s"%name,end="\t")               #!
     print("\n")
     print("*"*30)
-'''
+
 
 #商品购买                   #安全性尚待优化
 products = [["iphone","6888"],["MacPro","14800"],["小米6","2499"],["Coffee","31"],["Book","60"],["Nike","699"]]
@@ -166,16 +166,55 @@ for item in purching:
 print("总价为:%d"%sum)
 
 
+#元组                    #不可以修改
+tup1 = (1)              #type(tup1) = <class 'int'>
+tup2 = (1,)             #type(tup1) = <class 'tuple'>
+tup3 = (1,2,'3',"4")
+#元组数据访问
+print("tup3[0:5]:",tup3[0:5])
+print(type(tup3[0]),type(tup3[1]),type(tup3[2]),type(tup3[3]))      #int int str str
+#元组数据连接
+tup4 = tup2 + tup3
+print(tup4)
+#删除
+del tup4
 
-
-
-
-
-
-
-
-
-
+#字典
+#定义
+Info = {"name":"吴彦祖","age":18,17:17}
+#直接访问                       #当搜寻的值不存在的时候，会出现错误
+print(Info["name"])
+print(Info["age"])
+print(Info[17])
+#间接访问
+print(Info.get("gender"))      #搜寻不到的时候返回none
+print(Info.get("none","m"))    #自定义返回默认值
+#字典的增删改查
+#增 Info.balabala无效!
+Info["id"] = 123
+print(Info["id"])
+#删除
+del Info["id"]                  #删除整个键值对
+#print(Info["id"])
+Info.clear()                    #清空整个字典
+print("After Info.clear():",Info)
+#修改
+Info["name"] = "刘德华"
+print(Info["name"])
+print("*"*30)
+#查询
+Info = {"id":1,"name":"吴彦祖","age":18}
+print(Info.keys())              #打印所有的键(列表)
+print(Info.values())            #打印所有的值(列表)
+print(Info.items())             #打印所有的项(列表),每个键值都是一个元组
+#遍历所有的项
+for key,value in Info.items():
+    print("key=%s,value=%s"%(key,value))
+#使用enumerate打印数字下标值                                 ※
+mylist = ["a","b","c","d"]
+for i,x in enumerate(mylist):
+    print(i,x)
+'''
 
 
 
