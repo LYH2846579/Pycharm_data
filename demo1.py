@@ -108,8 +108,8 @@ else:
 print("张三位于:",namelist.index("张三",0,2))
 #统计
 print("李四出现了",namelist.count("李四"),"次")
-'''
 
+#列表操作
 namelist = ["a","b","c","d"]
 namelist.reverse()              #列表反转
 for name in namelist:
@@ -122,6 +122,56 @@ namelist.sort(reverse=True)     #Python中True和False开头均为大写
 print()                         #换行
 for name in namelist:
     print(name,end="")
+
+
+#三个办公室随机分配八个老师
+import random
+offices = [[],[],[]]
+namelist = ["A","B","C","D","E","F","G","H"]
+for name in namelist:
+    index = random.randint(0,2)
+    offices[index].append(name)                 #!
+i = 1
+for office in offices:
+    print("办公室%d的人数为%d:" %(i,len(office)))
+    i += 1
+    for name in office:
+        print("%s"%name,end="\t")               #!
+    print("\n")
+    print("*"*30)
+'''
+
+#商品购买                   #安全性尚待优化
+products = [["iphone","6888"],["MacPro","14800"],["小米6","2499"],["Coffee","31"],["Book","60"],["Nike","699"]]
+i = 0
+for item in products:
+    print(i,end="\t");i += 1
+    for name in item:
+        print("%s"%name,end="\t")
+    print()
+sum = 0
+purching = []
+while True:
+    a = input("请输入所需商品的序号(输入q退出)")
+    if(a != "q"):
+        a = int(a)
+        purching.append(products[a])
+        sum += int(products[a][1])
+    else:
+        break
+for item in purching:
+    for name in item:
+        print("%s"%name,end="\t")
+    print()
+print("总价为:%d"%sum)
+
+
+
+
+
+
+
+
 
 
 
