@@ -4,6 +4,8 @@
 # @File : demo1.py
 # @SoftWare : PyCharm
 
+#Python基础学习
+
 #这是我的第一个Python程序
 print("hello world")
 '''
@@ -214,6 +216,94 @@ for key,value in Info.items():
 mylist = ["a","b","c","d"]
 for i,x in enumerate(mylist):
     print(i,x)
+
+
+#函数
+#定义
+def printInfo():
+    print("--------------------")
+    print("  人生苦短，我用Python ")
+    print("--------------------")
+#调用
+printInfo()
+
+#带参数的函数
+def add2Num(a,b):
+    c = a+b
+    print(c)
+#调用
+add2Num(11,22)
+
+#带返回值的函数
+def add2Num(a,b):
+    return a+b
+#调用
+c = add2Num(11,12)
+print(c)
+
+#多返回值函数
+def divide(a,b):
+    shang = a/b
+    yushu = a%b
+    return shang,yushu      #多返回值用逗号分隔
+
+a,b = divide(11,6)          #多参数接受
+print(a,b)
+
+
+#全局变量和局部变量
+global a    #全局变量(在函数中)
+
+
+#文件操作
+#打开文件
+f = open("test.txt","w")        #若有重名的文件，重新创建
+f.write("Hello World!")
+#关闭文件
+f.close()
+
+#读文件
+f = open("test.txt","r")
+text = f.read(5)
+text1 = f.readline()
+text2 = f.readlines()
+print(text)                     #后面读取的数据是从上次读完后的位置开始的
+print(text1)
+print(text2)
+f.close()
+
+
+#读文件plus
+f = open("test.txt","r")
+content = f.readlines()
+print(content)
+i = 1
+for temp in content:
+    print("%d\t%s"%(i,temp))
+    i += 1
+for i,temp in enumerate(content):
+    print(i,temp)
+
+
+#异常处理
+try:
+    print("----------test----1----")
+    f = open("123.txt","r")                 #读不存在的文件
+    print("----------test----2----")
+except FileNotFoundError:                   #若发现这种错误，则进行如下方式处理
+    pass
+#将异常信息输出
+try:
+    print(num)
+except NameError as result:
+    print(result)
+#捕获所有异常
+try:
+    print("-------------test-----1---")
+    f = open("123.txt","r")
+    print(num)
+except Exception as result:                 #承接所有异常
+    print(result)
 '''
 
 
