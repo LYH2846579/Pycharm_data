@@ -4,6 +4,8 @@
 # @File : test1.py
 # @SoftWare : PyCharm
 
+#urllib补充
+
 import urllib.request
 # reponse = urllib.request.urlopen("http://www.baidu.com")
 # print(reponse.read().decode('utf-8'))
